@@ -6,7 +6,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.base import Base
 from app.models.user import User
 from app.models.task import Task
-from app.models.global_quests import GlobalQuest
+from app.models.global_quest import GlobalQuest
 
 class Character(Base):
     __tablename__ = "characters"
