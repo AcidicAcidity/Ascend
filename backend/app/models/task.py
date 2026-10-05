@@ -1,14 +1,17 @@
-from datetime import datetime, date
+from datetime import date, datetime
 from typing import Any
-from sqlalchemy import String, Integer, Boolean, Date, CheckConstraint, ForeignKey, BigInteger, Index
+
+from sqlalchemy import (BigInteger, Boolean, CheckConstraint, Date, ForeignKey,
+                        Index, Integer, String)
 from sqlalchemy.dialects import postgresql
-from sqlalchemy.dialects.postgresql import TIMESTAMP, JSONB
+from sqlalchemy.dialects.postgresql import JSONB, TIMESTAMP
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.base import Base
 from app.models.character import Character
-from app.models.user import User
 from app.models.quest_link import QuestLink
+from app.models.user import User
+
 
 class Task(Base):
     __tablename__ = "tasks"

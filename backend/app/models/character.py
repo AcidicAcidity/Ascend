@@ -1,12 +1,15 @@
 from datetime import datetime
-from sqlalchemy import String, Integer, Boolean, CheckConstraint, ForeignKey, BigInteger
-from sqlalchemy.dialects.postgresql import TIMESTAMP, JSONB
+
+from sqlalchemy import (BigInteger, Boolean, CheckConstraint, ForeignKey,
+                        Integer, String)
+from sqlalchemy.dialects.postgresql import JSONB, TIMESTAMP
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.base import Base
-from app.models.user import User
-from app.models.task import Task
 from app.models.global_quest import GlobalQuest
+from app.models.task import Task
+from app.models.user import User
+
 
 class Character(Base):
     __tablename__ = "characters"

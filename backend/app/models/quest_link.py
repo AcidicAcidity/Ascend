@@ -1,12 +1,15 @@
 from datetime import datetime
 from decimal import Decimal
-from sqlalchemy import Numeric, CheckConstraint, ForeignKey, BigInteger, UniqueConstraint
+
+from sqlalchemy import (BigInteger, CheckConstraint, ForeignKey, Numeric,
+                        UniqueConstraint)
 from sqlalchemy.dialects.postgresql import TIMESTAMP
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.base import Base
-from app.models.task import Task
 from app.models.global_quest import GlobalQuest
+from app.models.task import Task
+
 
 class QuestLink(Base):
     __tablename__ = "quest_links"

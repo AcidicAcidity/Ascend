@@ -1,12 +1,14 @@
 from datetime import datetime
-from sqlalchemy import String, CheckConstraint, Index
+
+from sqlalchemy import CheckConstraint, Index, String
 from sqlalchemy.dialects import postgresql
-from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import TIMESTAMP
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.sql.sqltypes import BigInteger
 
 from app.base import Base
 from app.models.character import Character
+
 
 class User(Base):
     __tablename__ = "users"

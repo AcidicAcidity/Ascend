@@ -1,8 +1,9 @@
+import os
+import sys
+
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
-import sys
-from dotenv import load_dotenv
-import os
 
 dotenv_path = "./.env"
 load_dotenv(dotenv_path)

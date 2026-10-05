@@ -1,9 +1,11 @@
 from datetime import datetime
-from sqlalchemy import BigInteger, String, CheckConstraint, Text, ForeignKey
+
+from sqlalchemy import BigInteger, CheckConstraint, ForeignKey, String, Text
 from sqlalchemy.dialects.postgresql import TIMESTAMP
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.base import Base
+
 
 class GlobalQuest(Base):
     __table_name__ = "global_quests"

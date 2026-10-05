@@ -1,7 +1,7 @@
 from datetime import date, datetime
-from typing import Literal, Any
-from pydantic import BaseModel, Field, ConfigDict, model_validator
+from typing import Any, Literal
 
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 StatKey = Literal["strength", "health", "resolve", "craft", "bonds"]
 ScheludeType = Literal["once", "daily", "weekly", "interval"]
