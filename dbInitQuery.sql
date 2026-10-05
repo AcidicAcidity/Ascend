@@ -68,7 +68,7 @@ CREATE TABLE characters (
            AND craft >= 0 AND bonds >= 0),
 
   CONSTRAINT characters_name_check
-    CHECK (length(trim(name)) > 0)
+    CHECK (length(trim(name)) > 2)
 );
 
 
