@@ -3,7 +3,7 @@ from sqlalchemy import String, Integer, Boolean, CheckConstraint, ForeignKey, Bi
 from sqlalchemy.dialects.postgresql import TIMESTAMP, JSONB
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base import Base
+from app.base import Base
 from app.models.user import User
 from app.models.task import Task
 from app.models.global_quests import GlobalQuest
