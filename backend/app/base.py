@@ -1,5 +1,5 @@
 from sqlalchemy import MetaData
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy.orm import DeclarativeBase
 
 # Соглашение об именах — чтобы Alembic генерил читаемые имена constraint'ов
 convention = {

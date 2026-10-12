@@ -1,16 +1,26 @@
-from datetime import date, datetime
-from typing import Any, Literal
+from datetime import datetime
+from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field
+from pydantic.functional_validators import field_validator
 
 Lang = Literal["ru", "en"]
 Theme = Literal["black", "white", "retro"]
 
 class CreateCharacter(BaseModel):
     name: str = Field(min_length=3, max_length=40)
-    xp_total: int | None = None
     skin: Theme = "black"
     lang: Lang = "ru"
+
+    @field_validator("name")
+    @classmethod
+    def validate_name(cls, v: str) -> str:
+        if v.strip() != v:
+            raise ValueError("Имя не может начинаться/заканчиваться пробелом")
+        if v.isdigit():
+            raise ValueError("Имя не может состоять из цифр")
+        return v
+
 
 class UpdateCharacter(BaseModel):
     name: str | None = Field(default=None, min_length=3, max_length=40)
