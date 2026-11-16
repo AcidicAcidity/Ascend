@@ -54,5 +54,5 @@ class Character(Base):
             "AND craft >= 0 AND bonds >= 0",
             name="stats_check",
         ),
-        CheckConstraint("lenght(trim(name)) > 0", name="name_check")
+        CheckConstraint("length(trim(name)) > 0", name="name_check")
     )
